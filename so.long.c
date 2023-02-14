@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:00:23 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 09:21:32 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:30:54 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void	game_load(t_long *data)
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->x * 64,
 			data->y * 64, "so_long");
-	data->wall = mlx_xpm_file_to_image(data->mlx_ptr, "6.xpm", &data->img_width,
-			&data->img_height);
-	data->grass = mlx_xpm_file_to_image(data->mlx_ptr, "grass.xpm",
+	data->wall = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/6.xpm",
 			&data->img_width, &data->img_height);
-	data->appel = mlx_xpm_file_to_image(data->mlx_ptr, "appel.xpm",
+	data->grass = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/grass.xpm",
 			&data->img_width, &data->img_height);
-	data->girl = mlx_xpm_file_to_image(data->mlx_ptr, "girl.xpm",
+	data->appel = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/appel.xpm",
 			&data->img_width, &data->img_height);
-	data->house = mlx_xpm_file_to_image(data->mlx_ptr, "house.xpm",
+	data->girl = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/girl.xpm",
 			&data->img_width, &data->img_height);
-	data->exi = mlx_xpm_file_to_image(data->mlx_ptr, "exit.xpm",
+	data->house = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/house.xpm",
+			&data->img_width, &data->img_height);
+	data->exi = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/exit.xpm",
 			&data->img_width, &data->img_height);
 }
 
