@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 20:18:24 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 16:38:29 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:04:58 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,7 @@ void	ft_check_error(t_long *data)
 			if (data->map[i][j] == 'E' && (data->map[i][j + 1] != 'X'
 				&& data->map[i][j - 1] != 'X' && data->map[i + 1][j] != 'X'
 				&& data->map[i - 1][j] != 'X'))
-			{
-				ft_putstr("Error you don't have valid path in the map\n");
-				exit_error(data);
-			}
+				ft_print_error(data);
 			j++;
 		}
 		i++;

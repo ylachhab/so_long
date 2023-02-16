@@ -6,15 +6,15 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:09:00 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 15:28:27 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/16 03:40:29 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "printf/ft_printf.h"
-# include "gnl/get_next_line.h"
+# include "../printf/ft_printf.h"
+# include "../gnl/get_next_line.h"
 # include <mlx.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -43,6 +43,7 @@ typedef struct s_long
 	void	*exi;
 	int		img_width;
 	int		img_height;
+	int		coin;
 }				t_long;
 
 void	ft_initialize_var(t_long *data);

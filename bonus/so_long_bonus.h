@@ -6,15 +6,15 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:09:00 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 16:15:20 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/16 01:05:50 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# include "printf/ft_printf.h"
-# include "gnl/get_next_line.h"
+# include "../printf/ft_printf.h"
+# include "../gnl/get_next_line.h"
 # include <mlx.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -30,17 +30,22 @@ typedef struct s_long
 	int		exit;
 	int		player;
 	int		collect;
+	int		enemy;
 	int		x;
 	int		y;
 	int		oldx;
 	int		xpl;
 	int		ypl;
+	int		xv;
+	int		yv;
 	void	*wall;
 	void	*grass;
 	void	*girl;
 	void	*appel;
 	void	*house;
 	void	*exi;
+	void	*monster;
+	void	**animation;
 	int		img_width;
 	int		img_height;
 }				t_long;

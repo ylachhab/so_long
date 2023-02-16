@@ -1,22 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_key_move.c                                      :+:      :+:    :+:   */
+/*   ft_move_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 10:45:55 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 09:21:32 by ylachhab         ###   ########.fr       */
+/*   Created: 2023/02/11 19:09:45 by ylachhab          #+#    #+#             */
+/*   Updated: 2023/02/16 05:21:34 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
-void	ft_right_d(t_long *data, int keycode)
+void	ft_destroy(t_long	*data)
 {
-	if (keycode == 2)
+	int	i;
+
+	i = 0;
+	mlx_destroy_image(data->mlx_ptr, data->animation);
+	mlx_destroy_image(data->mlx_ptr, data->wall);
+	mlx_destroy_image(data->mlx_ptr, data->grass);
+	mlx_destroy_image(data->mlx_ptr, data->girl);
+	mlx_destroy_image(data->mlx_ptr, data->exi);
+	mlx_destroy_image(data->mlx_ptr, data->appel);
+	while (i < data->y)
 	{
-		if (data->map[data->ypl][data->xpl + 1] == 'E' && data->collect == 0)
+		free(data->map[i]);
+		data->map[i] = NULL;
+		i++;
+	}
+	if (data->map)
+	{
+		free(data->map);
+		data->map = NULL;
+	}
+	exit (0);
+}
+
+void	ft_right(t_long *data, int keycode)
+{
+	if (keycode == 124)
+	{
+		if (data->map[data->ypl][data->xpl + 1] == 'V')
+			ft_destroy(data);
+		else if (data->map[data->ypl][data->xpl + 1] == 'E' && data->collect == 0)
 			ft_destroy(data);
 		if (data->map[data->ypl][data->xpl + 1] == '0'
 			&& data->map[data->ypl][data->xpl + 1] != '1')
@@ -37,10 +64,12 @@ void	ft_right_d(t_long *data, int keycode)
 	}
 }
 
-void	ft_left_a(t_long *data, int keycode)
+void	ft_left(t_long *data, int keycode)
 {
-	if (keycode == 0)
+	if (keycode == 123)
 	{
+		if (data->map[data->ypl][data->xpl - 1] == 'V')
+			ft_destroy(data);
 		if (data->map[data->ypl][data->xpl - 1] == 'E' && data->collect == 0)
 			ft_destroy(data);
 		if (data->map[data->ypl][data->xpl - 1] == '0'
@@ -62,10 +91,12 @@ void	ft_left_a(t_long *data, int keycode)
 	}
 }
 
-void	ft_down_s(t_long	*data, int keycode)
+void	ft_down(t_long	*data, int keycode)
 {
-	if (keycode == 1)
+	if (keycode == 125)
 	{
+		if (data->map[data->ypl + 1][data->xpl] == 'V')
+			ft_destroy(data);
 		if (data->map[data->ypl + 1][data->xpl] == 'E' && data->collect == 0)
 			ft_destroy(data);
 		if (data->map[data->ypl + 1][data->xpl] == '0'
@@ -88,10 +119,12 @@ void	ft_down_s(t_long	*data, int keycode)
 	}
 }
 
-void	ft_up_w(t_long	*data, int keycode)
+void	ft_up(t_long	*data, int keycode)
 {
-	if (keycode == 13)
+	if (keycode == 126)
 	{
+		if (data->map[data->ypl - 1][data->xpl] == 'V')
+			ft_destroy(data);
 		if (data->map[data->ypl - 1][data->xpl] == 'E' && data->collect == 0)
 			ft_destroy(data);
 		if (data->map[data->ypl - 1][data->xpl] == '0'
@@ -113,3 +146,4 @@ void	ft_up_w(t_long	*data, int keycode)
 		}
 	}
 }
+

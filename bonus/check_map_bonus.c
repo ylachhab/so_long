@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_map_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:17:39 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 09:21:32 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/15 23:39:00 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	valid_map(t_long *data)
 {
@@ -40,7 +40,7 @@ void	valid_map(t_long *data)
 
 int	checkmap(char c)
 {
-	if (c == 'P' || c == 'C' || c == '1' || c == '0' || c == 'E')
+	if (c == 'P' || c == 'C' || c == '1' || c == '0' || c == 'E' || c == 'V')
 		return (1);
 	return (0);
 }
@@ -70,6 +70,9 @@ void	m_map(t_long *data)
 					data->exit++;
 				else if (data->map[i][j] == 'C')
 					data->collect++;
+				else if (data->map[i][j] == 'V')
+					data->enemy++;
+				// ft_printf("%d\n", data->enemy);
 				j++;
 			}
 			else
@@ -82,15 +85,9 @@ void	m_map(t_long *data)
 void	containmap(t_long *data)
 {
 	if (data->player > 1)
-	{
-		ft_putstr("Multiplayer mode unavailable\n");
 		exit_error(data);
-	}
 	if (data->player < 1)
-	{
-		ft_putstr("You must set a player 'P'\n");
 		exit_error(data);
-	}
 	if (data->exit > 1)
 	{
 		ft_putstr("Only 1 exit is permitted\n");
@@ -104,6 +101,11 @@ void	containmap(t_long *data)
 	if (data->collect < 1)
 	{
 		ft_putstr("You must set a collectible 'C'\n");
+		exit_error(data);
+	}
+	if (data->enemy < 1)
+	{
+		ft_putstr("You must set a enemy 'V'\n");
 		exit_error(data);
 	}
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_func_utils_bonus.c                              :+:      :+:    :+:   */
+/*   ft_func_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:57:40 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 16:38:39 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/16 03:37:21 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 void	ft_initialize_var(t_long *data)
 {
@@ -22,6 +22,7 @@ void	ft_initialize_var(t_long *data)
 	data->oldx = 0;
 	data->xpl = 0;
 	data->ypl = 0;
+	data->coin = 0;
 }
 
 int	cross_click(t_long	*data)

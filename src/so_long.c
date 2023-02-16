@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so.long.c                                          :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:00:23 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/14 15:30:54 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/16 03:52:06 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,6 @@ void	ft_esc(int keycode, t_long	*data)
 
 int	move(int keycode, t_long *data)
 {
-	static int	i;
-
-	if (keycode == 125 || keycode == 124 || keycode == 123 || keycode == 126
-		|| keycode == 2 || keycode == 0 || keycode == 1 || keycode == 13
-		|| keycode == 53)
-		i++;
-	ft_printf("%d\n", i);
 	ft_esc(keycode, data);
 	ft_right(data, keycode);
 	ft_left(data, keycode);
