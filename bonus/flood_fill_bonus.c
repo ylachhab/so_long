@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 20:18:24 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/15 09:04:58 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/16 06:22:47 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	flood_fill(t_long *data, int y, int x)
 {
 	if (y < 0 || y >= data->y || x < 0 || x >= data->x
 		|| data->map[y][x] == 'X' || data->map[y][x] == '1'
-		|| data->map[y][x] == 'E')
+		|| data->map[y][x] == 'E' || data->map[y][x] == 'V')
 		return ;
 	data->map[y][x] = 'X';
 	flood_fill(data, y, x - 1);

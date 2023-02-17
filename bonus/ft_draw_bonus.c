@@ -6,11 +6,31 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 10:11:58 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/16 02:13:02 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 04:46:27 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	game_load(t_long *data)
+{
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, data->x * 64,
+			data->y * 64, "so_long");
+	data->wall = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/6.xpm",
+			&data->img_width, &data->img_height);
+	data->grass = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/grass.xpm",
+			&data->img_width, &data->img_height);
+	data->appel = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/appel.xpm",
+			&data->img_width, &data->img_height);
+	data->girl = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/girl.xpm",
+			&data->img_width, &data->img_height);
+	data->house = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/house.xpm",
+			&data->img_width, &data->img_height);
+	data->exi = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/exit.xpm",
+			&data->img_width, &data->img_height);
+	ft_animation(data);
+}
 
 void	ft_mlx(char c, t_long *data, int x, int y)
 {

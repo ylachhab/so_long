@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:09:45 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/16 05:21:34 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 04:46:56 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	ft_right(t_long *data, int keycode)
 	{
 		if (data->map[data->ypl][data->xpl + 1] == 'V')
 			ft_destroy(data);
-		else if (data->map[data->ypl][data->xpl + 1] == 'E' && data->collect == 0)
+		else if (data->map[data->ypl][data->xpl + 1] == 'E'
+		&& data->collect == 0)
 			ft_destroy(data);
 		if (data->map[data->ypl][data->xpl + 1] == '0'
 			&& data->map[data->ypl][data->xpl + 1] != '1')
@@ -146,4 +147,3 @@ void	ft_up(t_long	*data, int keycode)
 		}
 	}
 }
-

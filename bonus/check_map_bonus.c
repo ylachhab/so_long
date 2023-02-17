@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:17:39 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/15 23:39:00 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 04:59:54 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,6 @@ int	checkmap(char c)
 	return (0);
 }
 
-void	afficherror(t_long *data)
-{
-	ft_putstr("error :(\n");
-	exit_error(data);
-}
-
 void	m_map(t_long *data)
 {
 	int	j;
@@ -64,15 +58,7 @@ void	m_map(t_long *data)
 		{
 			if (checkmap(data->map[i][j]))
 			{
-				if (data->map[i][j] == 'P')
-					data->player++;
-				else if (data->map[i][j] == 'E')
-					data->exit++;
-				else if (data->map[i][j] == 'C')
-					data->collect++;
-				else if (data->map[i][j] == 'V')
-					data->enemy++;
-				// ft_printf("%d\n", data->enemy);
+				ft_counter(data, data->map[i][j]);
 				j++;
 			}
 			else
