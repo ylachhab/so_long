@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:57:40 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 05:01:00 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 22:12:01 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	ft_initialize_var(t_long *data)
 	data->xv = 0;
 	data->yv = 0;
 	data->enemy = 0;
+	data->coin = 0;
 }
 
 int	cross_click(t_long	*data)

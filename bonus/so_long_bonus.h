@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:09:00 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 04:46:11 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 23:04:29 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int		cross_click(t_long	*data);
 void	exit_error(t_long *data);
 void	ft_draw(t_long	*data);
 char	*ft_itoa(int n);
+void	ft_put_string(int keycode, t_long *data);
 void	ft_right(t_long *data, int keycode);
 void	ft_left(t_long *data, int keycode);
 void	ft_down(t_long	*data, int keycode);
@@ -89,5 +90,7 @@ void	ft_animation(t_long *data);
 void	draw_anim(t_long *data, int pos);
 void	position_enemy(t_long *data);
 void	game_load(t_long *data);
+void	ft_counter(t_long *data, char c);
+void	afficherror(t_long *data);
 
 #endif

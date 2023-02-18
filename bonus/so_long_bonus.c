@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:00:23 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 04:46:22 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/17 22:49:53 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ void	ft_esc(int keycode, t_long	*data)
 
 int	move(int keycode, t_long *data)
 {
-	static int	i;
-
-	data->line = ft_itoa(i);
 	ft_esc(keycode, data);
 	ft_right(data, keycode);
 	ft_left(data, keycode);
@@ -61,13 +58,6 @@ int	move(int keycode, t_long *data)
 	ft_left_a(data, keycode);
 	ft_down_s(data, keycode);
 	ft_up_w(data, keycode);
-	if (keycode == 124 || keycode == 123 || keycode == 126 || keycode == 125
-		|| keycode == 13 || keycode == 0 || keycode == 1 || keycode == 2)
-	{
-		mlx_string_put(data->mlx_ptr, data->win_ptr, 30, 15,
-			0000000, data->line);
-		i++;
-	}
 	return (1);
 }
 
