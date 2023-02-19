@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:09:45 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 21:39:44 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/18 16:26:26 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	ft_right(t_long *data, int keycode)
 			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl][data->xpl + 1] == 'C' && data->collect > 0)
+		else if (data->map[data->ypl][data->xpl + 1] == 'C'
+			&& data->collect > 0)
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
@@ -79,7 +80,7 @@ void	ft_left(t_long *data, int keycode)
 			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl][data->xpl - 1] == 'C')
+		else if (data->map[data->ypl][data->xpl - 1] == 'C')
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
@@ -104,18 +105,19 @@ void	ft_down(t_long	*data, int keycode)
 			data->map[data->ypl + 1][data->xpl] = 'P';
 			data->ypl++;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl + 1][data->xpl] == 'C')
+		else if (data->map[data->ypl + 1][data->xpl] == 'C')
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl + 1][data->xpl] = 'P';
 			data->ypl++;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		ft_printf("%d\n", data->coin);
 	}
 }
 
@@ -131,17 +133,18 @@ void	ft_up(t_long	*data, int keycode)
 			data->map[data->ypl - 1][data->xpl] = 'P';
 			data->ypl--;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl - 1][data->xpl] == 'C')
+		else if (data->map[data->ypl - 1][data->xpl] == 'C')
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl - 1][data->xpl] = 'P';
 			data->ypl--;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		ft_printf("%d\n", data->coin);
 	}
 }

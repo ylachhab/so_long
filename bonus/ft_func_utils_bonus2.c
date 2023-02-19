@@ -6,11 +6,23 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:59:29 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 22:50:07 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:17:46 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	null_cheaker(t_long *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 9)
+	{
+		if (!data->animation[i++])
+			exit_error(data);
+	}
+}
 
 void	afficherror(t_long *data)
 {

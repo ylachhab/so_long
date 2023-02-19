@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 10:11:58 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 04:46:27 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:17:02 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	game_load(t_long *data)
 			&data->img_width, &data->img_height);
 	data->exi = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/exit.xpm",
 			&data->img_width, &data->img_height);
+	if (!data->mlx_ptr || !data->win_ptr || !data->wall || !data->grass
+		|| !data->appel || !data->girl || !data->house || !data->exi)
+		exit_error(data);
 	ft_animation(data);
 }
 

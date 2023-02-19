@@ -6,7 +6,7 @@
 #    By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 09:24:19 by ylachhab          #+#    #+#              #
-#    Updated: 2023/02/18 01:34:07 by ylachhab         ###   ########.fr        #
+#    Updated: 2023/02/18 16:47:07 by ylachhab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,10 @@ bonus/%.o : bonus/%.c bonus/so_long_bonus.h
 $(NAME) : $(OBJS) printf/libftprintf.a
 	$(CC) $(FLAGS) $(OBJS) printf/libftprintf.a -lmlx -framework OpenGl -framework Appkit -o $(NAME)
 
-bonus : all $(OBJB) printf/libftprintf.a
+$(NAME_B) : $(OBJB) printf/libftprintf.a
 	$(CC) $(FLAGS) $(OBJB) printf/libftprintf.a -lmlx -framework OpenGl -framework Appkit -o $(NAME_B)
+
+bonus : all $(NAME_B)
 
 clean:
 	$(RM) $(OBJS) $(OBJB)

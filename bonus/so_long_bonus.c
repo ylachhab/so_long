@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:00:23 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 22:49:53 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:22:10 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_animation(t_long *data)
 	data->animation[8] = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./textures/manster9.xpm", &data->img_width, &data->img_height);
 	data->animation[9] = NULL;
+	null_cheaker(data);
 }
 
 void	ft_esc(int keycode, t_long	*data)

@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:09:00 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 23:04:29 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/19 03:17:38 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ void	position_enemy(t_long *data);
 void	game_load(t_long *data);
 void	ft_counter(t_long *data, char c);
 void	afficherror(t_long *data);
+void	null_cheaker(t_long *data);
 
 #endif

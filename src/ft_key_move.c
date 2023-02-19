@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:45:55 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 04:51:21 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/18 16:26:01 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	ft_right_d(t_long *data, int keycode)
 	{
 		if (data->map[data->ypl][data->xpl + 1] == 'E' && data->collect == 0)
 			ft_destroy(data);
-		if (data->map[data->ypl][data->xpl + 1] == '0'
-			&& data->map[data->ypl][data->xpl + 1] != '1')
+		if (data->map[data->ypl][data->xpl + 1] == '0')
 		{
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl][data->xpl + 1] = 'P';
@@ -47,8 +46,7 @@ void	ft_left_a(t_long *data, int keycode)
 	{
 		if (data->map[data->ypl][data->xpl - 1] == 'E' && data->collect == 0)
 			ft_destroy(data);
-		if (data->map[data->ypl][data->xpl - 1] == '0'
-			&& data->map[data->ypl][data->xpl - 1] != '1')
+		if (data->map[data->ypl][data->xpl - 1] == '0')
 		{
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl][data->xpl - 1] = 'P';
@@ -76,26 +74,25 @@ void	ft_down_s(t_long	*data, int keycode)
 	{
 		if (data->map[data->ypl + 1][data->xpl] == 'E' && data->collect == 0)
 			ft_destroy(data);
-		if (data->map[data->ypl + 1][data->xpl] == '0'
-			&& data->map[data->ypl + 1][data->xpl] != '1')
+		if (data->map[data->ypl + 1][data->xpl] == '0')
 		{
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl + 1][data->xpl] = 'P';
 			data->ypl++;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl + 1][data->xpl] == 'C'
-			&& data->map[data->ypl + 1][data->xpl] != '1')
+		if (data->map[data->ypl + 1][data->xpl] == 'C')
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl + 1][data->xpl] = 'P';
 			data->ypl++;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		ft_printf("%d\n", data->coin);
 	}
 }
 
@@ -105,25 +102,24 @@ void	ft_up_w(t_long	*data, int keycode)
 	{
 		if (data->map[data->ypl - 1][data->xpl] == 'E' && data->collect == 0)
 			ft_destroy(data);
-		if (data->map[data->ypl - 1][data->xpl] == '0'
-			&& data->map[data->ypl - 1][data->xpl] != '1')
+		if (data->map[data->ypl - 1][data->xpl] == '0')
 		{
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl - 1][data->xpl] = 'P';
 			data->ypl--;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		if (data->map[data->ypl - 1][data->xpl] == 'C'
-			&& data->map[data->ypl - 1][data->xpl] != '1')
+		if (data->map[data->ypl - 1][data->xpl] == 'C')
 		{
 			data->collect--;
 			data->map[data->ypl][data->xpl] = '0';
 			data->map[data->ypl - 1][data->xpl] = 'P';
 			data->ypl--;
 			data->coin++;
+			ft_printf("%d\n", data->coin);
 			ft_draw(data);
 		}
-		ft_printf("%d\n", data->coin);
 	}
 }
