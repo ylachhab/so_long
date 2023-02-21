@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:09:45 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/18 16:26:26 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 01:21:41 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_destroy(t_long	*data)
 	mlx_destroy_image(data->mlx_ptr, data->grass);
 	mlx_destroy_image(data->mlx_ptr, data->girl);
 	mlx_destroy_image(data->mlx_ptr, data->exi);
+	mlx_destroy_image(data->mlx_ptr, data->house);
 	mlx_destroy_image(data->mlx_ptr, data->appel);
 	while (i < data->y)
 	{

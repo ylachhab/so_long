@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:00:23 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/19 03:08:03 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 01:26:56 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,9 @@ int	main(int ac, char *av[])
 		mlx_loop(data.mlx_ptr);
 	}
 	else
+	{
 		ft_putstr("error\n");
+		exit (1);
+	}
+	return (0);
 }

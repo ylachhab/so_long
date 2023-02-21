@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 10:11:58 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/19 03:17:02 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:42:54 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ void	ft_mlx(char c, t_long *data, int x, int y)
 	else if (c == 'E' && data->collect == 0)
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 			data->exi, x, y);
+	else if (c == 'V')
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+			data->animation, x, y);
+	ft_put_string(data);
 }
 
 void	ft_draw(t_long	*data)

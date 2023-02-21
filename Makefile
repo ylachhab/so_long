@@ -6,7 +6,7 @@
 #    By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 09:24:19 by ylachhab          #+#    #+#              #
-#    Updated: 2023/02/18 16:47:07 by ylachhab         ###   ########.fr        #
+#    Updated: 2023/02/19 20:10:08 by ylachhab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC_B = bonus/check_map_bonus.c\
 		bonus/ft_animation_bonus.c\
 		bonus/ft_func_utils_bonus.c\
 		bonus/ft_func_utils_bonus2.c\
+		bonus/ft_func_utils_bonus3.c\
 		bonus/ft_key_move_bonus.c\
 		bonus/ft_move_bonus.c\
 		bonus/so_long_bonus.c\

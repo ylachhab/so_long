@@ -6,11 +6,17 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:27:33 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/17 18:28:06 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:16:30 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	error_file(void)
+{
+	ft_printf("error in file\n");
+	exit (1);
+}
 
 void	exit_error(t_long *data)
 {
@@ -38,9 +44,11 @@ void	mallocmap(t_long *data, char *str)
 	char	*line;
 
 	if (checkfile(str) == 0)
-		exit (1);
+		error_file();
 	fd = ft_open(str);
 	line = get_next_line(fd);
+	if (!line)
+		error_file();
 	data->x = ft_strlen(line);
 	while (line)
 	{

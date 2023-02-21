@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:23:20 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/16 02:03:21 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:21:32 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,6 @@ void	rectangularmap(t_long *data, char *str)
 		if (data->oldx != data->x)
 		{
 			ft_putstr("error map isn't rectangular+++\n");
-			exit_error(data);
-		}
-		if (data->x == data->y)
-		{
-			ft_putstr("error map isn't rectangular--\n");
 			exit_error(data);
 		}
 		free(line);

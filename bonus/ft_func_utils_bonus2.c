@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:59:29 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/02/19 03:17:46 by ylachhab         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:08:11 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	null_cheaker(t_long *data)
 	int	i;
 
 	i = 0;
-	while (i < 9)
+	while (i < 8)
 	{
 		if (!data->animation[i++])
 			exit_error(data);
@@ -53,14 +53,12 @@ int	ft_open(char *str)
 	return (fd);
 }
 
-void	ft_put_string(int keycode, t_long *data)
+void	ft_put_string(t_long *data)
 {
 	data->line = ft_itoa(data->coin);
-	if ((keycode == 124 || keycode == 123 || keycode == 126 || keycode == 125
-			|| keycode == 13 || keycode == 0 || keycode == 1 || keycode == 2))
-	{
-		mlx_string_put(data->mlx_ptr, data->win_ptr, 30, 15,
-			0000000, data->line);
-		data->coin++;
-	}
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 0, 15,
+		0000000, "THE MOVE:");
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 30, 30,
+		0000000, data->line);
+	free(data->line);
 }
